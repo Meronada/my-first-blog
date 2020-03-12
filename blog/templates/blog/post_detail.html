@@ -3,22 +3,35 @@
 
 
 {% block content %}
-    <div class="post" id="green">
-        {% if post.published_date %}
-            <div class="date">
-                {{ post.published_date }}
-            </div>
-        {% endif %}
+    <div class="post container" id="green">
 
-        {% if request.user.is_authenticated %}
-        <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-edit"></span></a>
-        {% endif %}
+      <div class="row">
+        <div class="col-md-12">
+          {% if post.published_date %}
+              <div class="date">
+                  {{ post.published_date }}
+              </div>
+          {% endif %}
 
-        <h2>{{ post.title }}</h2>
-        <p>{{ post.text|linebreaksbr }}</p>
+          {% if request.user.is_authenticated %}
+          <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-edit"></span></a>
+          {% endif %}
 
-        {% if post.image %}
-            <img src="{{ post.image.url }}" alt="blog image">
-        {% endif %}
+          <h2>{{ post.title }}</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          {% if post.image %}
+          <img src="{{ post.image.url }}" alt="blog image">
+          {% endif %}
+        </div>
+        <div class="col-md-8">
+          <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+      </div>
+
     </div>
+
 {% endblock %}
