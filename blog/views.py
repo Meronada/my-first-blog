@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.urls import reverse
 from django.utils import timezone
 from .models import Post
 from django.shortcuts import render, get_object_or_404
@@ -18,6 +18,9 @@ def post_new(request):
     return render(request, 'blog/post_edit.html', {'form': form})
 
 def post_new(request):
+    if request.user.is_anonymous:
+        return redirect('{}?next={}'.format(reverse('admin:login'), reverse('post_new')))
+
     if request.method == "POST":
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
@@ -32,6 +35,9 @@ def post_new(request):
 
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
+    if request.user.is_anonymous:
+        return redirect('{}?next={}'.format(reverse('admin:login'), reverse('post_edit', kwargs={'pk': pk})))
+
     if request.method == "POST":
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
