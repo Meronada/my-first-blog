@@ -45,6 +45,10 @@ h1, h2, h3, h4 {
     color: #000000;
 }
 
+.post img {
+    width: 100%;
+}
+
 #footer {
     position: relative;
     left: 0;
@@ -53,5 +57,5 @@ h1, h2, h3, h4 {
  }
 
  #green{
-    border: black SOLID 1px;
+    border: greenyellow SOLID 1px;
  }
