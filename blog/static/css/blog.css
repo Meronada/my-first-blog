@@ -1,11 +1,12 @@
 .page-header {
-    background-color: black;
+    background-color: green;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
+    border: solid 1px red;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-    color: #ffffff;
+    color: white;
     font-size: 36pt;
     text-decoration: none;
 }
@@ -58,4 +59,6 @@ h1, h2, h3, h4 {
 
  .comment {
     margin: 20px 0px 20px 20px;
+    border: solid 1px red;
+
 }
