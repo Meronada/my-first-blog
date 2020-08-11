@@ -78,12 +78,14 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'djangogirls',
-        'USER': 'meron',
-        'PASSWORD': 'meron',
+        'USER': 'Meronada',
+        'PASSWORD': 'wkMktX47uyM7F@K',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '3306',
+        # 'HOST': 'Meronada.mysql.pythonanywhere-services.com'
+        # 'PORT': 3306
     }
 }
 
