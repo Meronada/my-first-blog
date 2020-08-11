@@ -6,3 +6,5 @@ myvenv
 
 /static
 .DS_Store
+
+/envdir/*

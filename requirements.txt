@@ -3,3 +3,4 @@ django_extensions
 Pillow
 psycopg2
 mysqlclient
+dj-database-url
