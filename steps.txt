@@ -1,0 +1,35 @@
+python3 -m venv myvenv
+
+myvenv\Scripts\activate
+
+(myvenv) python -m pip install --upgrade pip or
+(myvenv) python -m pip install --upgrade setuptools (installs distutils)
+
+(myvenv) pip install -r requirements.txt
+
+(myvenv) python manage.py runserver
+go to http://127.0.0.1:8000/
+
+
+
+in mysite/settings.py
+
+import os
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+    }
+}
+
+
+
+in requirements.txt
+
+Django>=5.0,<6.0
+django_extensions
+Pillow
+psycopg2
+mysqlclient
+dj-database-url
